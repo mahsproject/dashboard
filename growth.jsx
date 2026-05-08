@@ -110,8 +110,8 @@ function SizeRevenueSection({ data }) {
             <h2 style={{marginTop: 14}}>Mostly micro, increasingly mighty.</h2>
           </div>
           <p className="lede">
-            Three out of five companies still operate under ten employees, but the medium and large tiers
-            account for ~73% of all funded entities.
+            Among companies with reported headcount (5,661 of 12,192), three in five are micro-sized.
+            Medium and large tiers fund at 2–3× the rate of micro companies.
           </p>
         </div>
 
