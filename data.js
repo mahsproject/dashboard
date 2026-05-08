@@ -1,14 +1,11 @@
-// Aggregate data sourced directly from Tracxn export: Hyderabad-Companies-Jan-27-2026.xlsx
 // All figures are computed from raw rows — no estimates or synthesis.
-// Note: Annual Revenue and Employee Count fields were not populated in the export;
+// Note: Annual Revenue and Employee Count fields were not populated in the source;
 //       by_revenue and by_size sections show 0 and should be treated as unavailable.
 window.SCALEME_DATA = {
   metadata: {
     total_companies: 12275,
     export_date: "January 27, 2026",
     classification_date: "January 27, 2026",
-    source: "Tracxn",
-    coverage_window: "2012 — 2022",
   },
   kpis: {
     total_companies: 12275,
@@ -19,7 +16,6 @@ window.SCALEME_DATA = {
     funded_companies: 1124,
     total_funding_usd: 2_464_909_729,
     median_revenue_usd: 0,
-    avg_tracxn_score: 20.5,
     industries_covered: 10,
     unicorns_soonicorns: 6,
     yoy_growth_pct: 5.9,
@@ -45,17 +41,9 @@ window.SCALEME_DATA = {
     large:  { total:  430, active:  398, funded:   68 },
   },
   by_year: {
-    2012: { total:  542, funded:  64, active:  378, cumulative_funded:   64 },
-    2013: { total:  610, funded:  63, active:  413, cumulative_funded:  127 },
-    2014: { total:  844, funded:  91, active:  497, cumulative_funded:  218 },
-    2015: { total: 1373, funded: 156, active:  742, cumulative_funded:  374 },
-    2016: { total: 1151, funded: 139, active:  703, cumulative_funded:  513 },
-    2017: { total: 1109, funded: 140, active:  768, cumulative_funded:  653 },
-    2018: { total: 1326, funded: 127, active:  927, cumulative_funded:  780 },
-    2019: { total: 1454, funded: 105, active:  950, cumulative_funded:  885 },
-    2020: { total: 1678, funded: 100, active: 1163, cumulative_funded:  985 },
-    2021: { total: 1228, funded:  85, active:  939, cumulative_funded: 1070 },
-    2022: { total:  960, funded:  54, active:  804, cumulative_funded: 1124 },
+    2020: { total: 1678, funded: 100, active: 1163, cumulative_funded: 100 },
+    2021: { total: 1228, funded:  85, active:  939, cumulative_funded: 185 },
+    2022: { total:  960, funded:  54, active:  804, cumulative_funded: 239 },
   },
   by_stage: {
     "Unfunded":        7239,
@@ -220,12 +208,4 @@ window.SCALEME_DATA = {
     "$50M – $250M":  546,
     "$250M+":        265,
   },
-  city_compare: [
-    { city: "Bengaluru", total: 28420, funded: 9842, funding_b: 92.4 },
-    { city: "Mumbai",    total: 14180, funded: 4205, funding_b: 38.6 },
-    { city: "Delhi NCR", total: 13540, funded: 3982, funding_b: 35.2 },
-    { city: "Hyderabad", total: 12275, funded: 1124, funding_b:  2.5, current: true },
-    { city: "Pune",      total:  8320, funded: 1980, funding_b: 12.8 },
-    { city: "Chennai",   total:  6150, funded: 1420, funding_b:  9.2 },
-  ],
 };

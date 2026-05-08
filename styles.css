@@ -693,52 +693,6 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-bubble.active .count { color: var(--accent); }
 
-/* Compare cities */
-.cities-list { display: flex; flex-direction: column; gap: 0; }
-.city-row {
-  display: grid;
-  grid-template-columns: 28px 180px 1fr 110px 90px;
-  gap: 18px;
-  padding: 18px 0;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-}
-.city-row:last-child { border-bottom: 0; }
-.city-row.is-current { background: var(--accent-soft); margin: 0 -16px; padding: 18px 16px; border-radius: 8px; border-bottom-color: transparent; }
-.city-rank { font-family: var(--font-mono); font-size: 11px; color: var(--fg-faint); }
-.city-name {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: -0.01em;
-}
-.city-row.is-current .city-name { color: var(--accent); }
-.city-bar {
-  height: 6px;
-  background: var(--surface-2);
-  border-radius: 999px;
-  overflow: hidden;
-  position: relative;
-}
-.city-bar-fill {
-  height: 100%;
-  background: var(--fg-2);
-  border-radius: 999px;
-}
-.city-row.is-current .city-bar-fill { background: var(--accent); }
-.city-num { font-family: var(--font-mono); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
-.city-funding { font-family: var(--font-mono); font-size: 12px; text-align: right; color: var(--fg-muted); }
-.coming-soon-tag {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  padding: 2px 6px;
-  background: var(--surface-3);
-  border-radius: 4px;
-  color: var(--fg-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-left: 8px;
-}
-
 /* Request access */
 .request-card {
   background: var(--surface);

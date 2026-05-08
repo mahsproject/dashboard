@@ -43,7 +43,7 @@ function useCountUp(target, duration = 1400, deps = []) {
 function useThemeMode() {
   const [mode, setMode] = useState(() => {
     if (typeof window === "undefined") return "dark";
-    return localStorage.getItem("scaleme-theme") || "dark";
+    return localStorage.getItem("scaleme-theme") || "light";
   });
   useEffect(() => {
     document.documentElement.dataset.theme = mode;

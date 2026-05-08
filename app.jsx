@@ -64,60 +64,16 @@ function App() {
           <main style={{minWidth: 0}}>
             <IndustrySection data={data} filters={filters} setFilters={setFilters} chartStyle={tweaks.industryChartStyle} />
             <GrowthSection data={data} filters={filters} />
-            <SizeRevenueSection data={data} filters={filters} />
+            <SizeRevenueSection data={data} />
             <FundingSection data={data} funnelStyle={tweaks.funnelStyle} />
             <ThemeSection data={data} filters={filters} setFilters={setFilters} />
-            <CitySection data={data} />
             <RequestSection filters={filters} setFilters={setFilters} />
           </main>
         </div>
       </div>
 
       <Footer />
-
-      {/* Tweaks panel */}
-      <ScaleMeTweaks tweaks={tweaks} setTweak={setTweak} />
     </>
-  );
-}
-
-function ScaleMeTweaks({ tweaks, setTweak }) {
-  if (!window.TweaksPanel) return null;
-  const { TweaksPanel, TweakSection, TweakRadio, TweakSelect, TweakColor } = window;
-
-  // Map between accent name and hex (TweakColor takes hex options)
-  const accentHex = { teal: "#14b8a6", coral: "#fb7e54", indigo: "#818cf8", amber: "#f5b455" };
-  const hexAccent = Object.fromEntries(Object.entries(accentHex).map(([k, v]) => [v, k]));
-
-  return (
-    <TweaksPanel>
-      <TweakSection label="Hero">
-        <TweakRadio label="Background" value={tweaks.heroMode}
-          options={[{value: "particles", label: "Network"}, {value: "scan", label: "Scan"}, {value: "off", label: "Off"}]}
-          onChange={v => setTweak("heroMode", v)} />
-      </TweakSection>
-      <TweakSection label="Accent">
-        <TweakColor label="Color" value={accentHex[tweaks.accent] || "#14b8a6"}
-          options={["#14b8a6", "#fb7e54", "#818cf8", "#f5b455"]}
-          onChange={hex => setTweak("accent", hexAccent[hex] || "teal")} />
-      </TweakSection>
-      <TweakSection label="Charts">
-        <TweakSelect label="Industry" value={tweaks.industryChartStyle}
-          options={[{value: "donut", label: "Donut"}, {value: "radial", label: "Bars"}, {value: "treemap", label: "Treemap"}]}
-          onChange={v => setTweak("industryChartStyle", v)} />
-        <TweakSelect label="Funnel" value={tweaks.funnelStyle}
-          options={[{value: "stepped", label: "Stepped"}, {value: "flowing", label: "Flowing"}, {value: "sankey", label: "Sankey"}]}
-          onChange={v => setTweak("funnelStyle", v)} />
-      </TweakSection>
-      <TweakSection label="Type & density">
-        <TweakRadio label="Type" value={tweaks.typeScale}
-          options={[{value: "standard", label: "Standard"}, {value: "editorial", label: "Editorial"}]}
-          onChange={v => setTweak("typeScale", v)} />
-        <TweakRadio label="Density" value={tweaks.density}
-          options={[{value: "comfortable", label: "Comfy"}, {value: "compact", label: "Compact"}]}
-          onChange={v => setTweak("density", v)} />
-      </TweakSection>
-    </TweaksPanel>
   );
 }
 

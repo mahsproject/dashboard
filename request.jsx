@@ -14,12 +14,12 @@ function RequestSection({ filters, setFilters }) {
 
   return (
     <section className="section" id="request">
-      <span className="section-num">08 / Access</span>
+      <span className="section-num">07 / Access</span>
       <div className="shell">
         <div className="request-card">
           <div className="request-grid">
             <div>
-              <span className="eyebrow">08 — Get the dataset</span>
+              <span className="eyebrow">07 — Get the dataset</span>
               <h3 style={{marginTop: 16}}>Request the underlying<br/>company-level data.</h3>
               <p className="lede">
                 Aggregate stats are public. Company-level records — names, revenue, funding rounds,
@@ -156,7 +156,7 @@ function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 ScaleMe Research · Source: Tracxn export Jan 27, 2026</span>
+          <span>© 2026 ScaleMe Research · Hyderabad Startup Ecosystem</span>
           <span>Aggregate statistics shown publicly · individual records under license</span>
         </div>
       </div>

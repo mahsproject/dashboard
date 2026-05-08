@@ -14,7 +14,6 @@ function Topbar({ themeMode, setThemeMode }) {
         <a href="#growth">Growth</a>
         <a href="#funding">Funding</a>
         <a href="#themes">Themes</a>
-        <a href="#cities">Cities</a>
       </nav>
       <div className="top-actions">
         <button
@@ -52,8 +51,7 @@ function Hero({ kpis, heroMode, industryFilter, sizeFilter, stageFilter, themeFi
         <div className="hero-meta">
           <div className="hero-meta-row">
             <span><span className="live-dot"></span>Live · {window.SCALEME_DATA.metadata.export_date}</span>
-            <span>SOURCE / Tracxn export</span>
-            <span>COVERAGE / {window.SCALEME_DATA.metadata.coverage_window}</span>
+            <span>HYD / Startup Ecosystem</span>
           </div>
           <div className="hero-meta-row">
             <span>HYD-001 / RPT v4.2</span>
@@ -61,12 +59,12 @@ function Hero({ kpis, heroMode, industryFilter, sizeFilter, stageFilter, themeFi
         </div>
 
         <h1 className="rise">
-          <em>Business Ecosystem</em><br/>
-          <span className="num">{Math.round(totalDisplay).toLocaleString()}</span> companies,<br/>
-          a decade of capital.
+          <em>Hyderabad's</em><br/>
+          Business Ecosystem —<br/>
+          <span className="num">{Math.round(totalDisplay).toLocaleString()}</span> companies.
         </h1>
         <p className="hero-sub rise" style={{animationDelay: "0.1s"}}>
-          A complete, classification-grade view of every company by sector, stage, status, funding, and the themes shaping each. Built for investors, operators, and policy.
+          A classification-grade view of Hyderabad's startup ecosystem by sector, stage, status, and funding. Every company mapped, every theme tagged. Built for investors, operators, and policy.
         </p>
         <div className="hero-actions rise" style={{animationDelay: "0.2s"}}>
           <a href="#industries" className="cta cta-accent">Explore the data →</a>
