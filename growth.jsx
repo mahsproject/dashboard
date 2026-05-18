@@ -102,11 +102,11 @@ function SizeRevenueSection({ data }) {
 
   return (
     <section className="section" id="size">
-      <span className="section-num">04 / Scale</span>
+      <span className="section-num">03 / Scale</span>
       <div className="shell">
         <div className="section-head">
           <div>
-            <span className="eyebrow">04 — Company scale</span>
+            <span className="eyebrow">03 — Company scale</span>
             <h2 style={{marginTop: 14}}>Mostly micro, increasingly mighty.</h2>
           </div>
           <p className="lede">

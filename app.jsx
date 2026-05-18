@@ -4,7 +4,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "teal",
   "industryChartStyle": "donut",
   "heroMode": "particles",
-  "funnelStyle": "stepped",
   "typeScale": "standard",
   "density": "comfortable"
 }/*EDITMODE-END*/;
@@ -63,11 +62,8 @@ function App() {
           <Sidebar data={data} filters={filters} setFilters={setFilters} totalFiltered={totalFiltered} />
           <main style={{minWidth: 0}}>
             <IndustrySection data={data} filters={filters} setFilters={setFilters} chartStyle={tweaks.industryChartStyle} />
-            <GrowthSection data={data} filters={filters} />
             <SizeRevenueSection data={data} />
-            <FundingSection data={data} funnelStyle={tweaks.funnelStyle} />
             <ThemeSection data={data} filters={filters} setFilters={setFilters} />
-            <RequestSection filters={filters} setFilters={setFilters} />
           </main>
         </div>
       </div>

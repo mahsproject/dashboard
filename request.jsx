@@ -113,6 +113,7 @@ function RequestSection({ filters, setFilters }) {
 }
 
 function Footer() {
+  const data = window.SCALEME_DATA;
   return (
     <footer className="foot">
       <div className="shell">
@@ -121,37 +122,50 @@ function Footer() {
             <div className="brand" style={{marginBottom: 16}}>
               <span className="brand-mark"></span>
               <strong>ScaleMe</strong>
-              <span className="brand-loc">India / startup ecosystems</span>
+              <span className="brand-loc">Hyderabad / startup ecosystem</span>
             </div>
             <p style={{maxWidth: 380, fontSize: 13, lineHeight: 1.55}}>
-              Hand-classified, source-linked startup datasets for India.
-              Hyderabad is our reference release; Bengaluru, Mumbai, Delhi and Pune ship through 2026.
+              Hand-classified, source-linked startup data for Hyderabad's business ecosystem.
+              Every company mapped, every theme tagged.
             </p>
           </div>
           <div>
-            <h4>Dashboards</h4>
+            <h4>Explore</h4>
             <ul>
-              <li><a href="#">Bengaluru</a></li>
-              <li><a href="#">Mumbai</a></li>
-              <li><a href="#">Delhi NCR</a></li>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#industries">Industries</a></li>
+              <li><a href="#size">Company Scale</a></li>
+              <li><a href="#themes">Themes</a></li>
             </ul>
           </div>
           <div>
-            <h4>Data</h4>
+            <h4>Ecosystem snapshot</h4>
+            <ul style={{listStyle: "none", padding: 0}}>
+              <li style={{marginBottom: 6, fontSize: 13, color: "var(--fg-2)"}}>
+                <span style={{color: "var(--fg-muted)", marginRight: 6}}>Companies</span>
+                <strong style={{color: "var(--fg)"}}>{data.kpis.total_companies.toLocaleString()}</strong>
+              </li>
+              <li style={{marginBottom: 6, fontSize: 13, color: "var(--fg-2)"}}>
+                <span style={{color: "var(--fg-muted)", marginRight: 6}}>Active</span>
+                <strong style={{color: "var(--fg)"}}>{data.kpis.active_companies.toLocaleString()}</strong>
+              </li>
+              <li style={{marginBottom: 6, fontSize: 13, color: "var(--fg-2)"}}>
+                <span style={{color: "var(--fg-muted)", marginRight: 6}}>Capital raised</span>
+                <strong style={{color: "var(--fg)"}}>${(data.kpis.total_funding_usd / 1e9).toFixed(1)}B</strong>
+              </li>
+              <li style={{fontSize: 13, color: "var(--fg-2)"}}>
+                <span style={{color: "var(--fg-muted)", marginRight: 6}}>Industries</span>
+                <strong style={{color: "var(--fg)"}}>{data.kpis.industries_covered}</strong>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>About</h4>
             <ul>
               <li><a href="#">Methodology</a></li>
               <li><a href="#">Classification taxonomy</a></li>
               <li><a href="#">Changelog</a></li>
-              <li><a href="#">API docs</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Press</a></li>
-              <li><a href="#request">Contact</a></li>
-              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>

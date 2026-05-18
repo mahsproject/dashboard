@@ -11,8 +11,6 @@ function Topbar({ themeMode, setThemeMode }) {
       <nav className="topnav">
         <a href="#overview" className="active">Overview</a>
         <a href="#industries">Industries</a>
-        <a href="#growth">Growth</a>
-        <a href="#funding">Funding</a>
         <a href="#themes">Themes</a>
       </nav>
       <div className="top-actions">
@@ -33,7 +31,6 @@ function Topbar({ themeMode, setThemeMode }) {
             </svg>
           )}
         </button>
-        <a href="#request" className="cta">Request data access →</a>
       </div>
     </header>
   );
@@ -68,7 +65,6 @@ function Hero({ kpis, heroMode, industryFilter, sizeFilter, stageFilter, themeFi
         </p>
         <div className="hero-actions rise" style={{animationDelay: "0.2s"}}>
           <a href="#industries" className="cta cta-accent">Explore the data →</a>
-          <a href="#request" className="cta cta-ghost">Request full dataset</a>
         </div>
 
         <KPIStrip kpis={kpis} />
