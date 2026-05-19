@@ -1,7 +1,7 @@
 // Industry breakdown — donut / radial bars / treemap variants
 const { PieChart, Pie, Cell, ResponsiveContainer, Tooltip: RTooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Treemap } = window.Recharts;
 
-function IndustrySection({ data, filters, setFilters, chartStyle = "donut" }) {
+function IndustrySection({ data, filters, setFilters, chartStyle = "donut", compareMode = false, compareIndustry = null, setCompareIndustry }) {
   const colors = window.SCALEME_THEME.industries;
   const entries = Object.entries(data.by_industry)
     .filter(([, v]) => v.total > 0)
@@ -36,6 +36,17 @@ function IndustrySection({ data, filters, setFilters, chartStyle = "donut" }) {
             but Healthcare, Consumer, and FinTech together are nearly its match.
           </p>
         </div>
+
+        {compareMode && selected && (
+          <CompareBar
+            primary={selected}
+            secondary={compareIndustry}
+            setSecondary={setCompareIndustry}
+            data={data}
+            entries={entries}
+            colors={colors}
+          />
+        )}
 
         <div className="card card-pad">
           <div className="card-head">
@@ -239,3 +250,61 @@ function SubSectorList({ industry, subSectors, color }) {
 }
 
 Object.assign(window, { IndustrySection });
+
+function CompareBar({ primary, secondary, setSecondary, data, entries, colors }) {
+  const others = entries.filter(([n]) => n !== primary).map(([n]) => n);
+  const p = data.by_industry[primary];
+  const s = secondary ? data.by_industry[secondary] : null;
+
+  const Metric = ({ label, vP, vS, fmt = (x) => x.toLocaleString() }) => (
+    <div style={{flex: 1, padding: "14px 16px", borderRight: "1px solid var(--border)"}}>
+      <div className="mono" style={{fontSize: 10, letterSpacing: "0.14em", color: "var(--fg-muted)", textTransform: "uppercase", marginBottom: 8}}>{label}</div>
+      <div style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12}}>
+        <span className="serif tabular" style={{fontSize: 22, color: colors[primary]}}>{fmt(vP)}</span>
+        {vS != null ? (
+          <span className="serif tabular" style={{fontSize: 22, color: colors[secondary]}}>{fmt(vS)}</span>
+        ) : (
+          <span className="mono" style={{fontSize: 11, color: "var(--fg-faint)"}}>—</span>
+        )}
+      </div>
+    </div>
+  );
+
+  return (
+    <div style={{marginBottom: 22, padding: "14px 16px", background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 12}}>
+      <div style={{display: "flex", alignItems: "center", gap: 12, marginBottom: 14, flexWrap: "wrap"}}>
+        <span className="compare-badge">
+          <span className="dot" style={{background: colors[primary]}}></span>{primary}
+        </span>
+        <span className="mono" style={{fontSize: 11, color: "var(--fg-muted)", letterSpacing: "0.1em"}}>VS.</span>
+        <select
+          value={secondary || ""}
+          onChange={(e) => setSecondary(e.target.value || null)}
+          style={{
+            background: "var(--surface-2)", border: "1px solid var(--border)", borderRadius: 8,
+            color: "var(--fg)", padding: "6px 28px 6px 10px", fontSize: 13, fontFamily: "inherit"
+          }}>
+          <option value="">Pick an industry to compare…</option>
+          {others.map(n => <option key={n} value={n}>{n}</option>)}
+        </select>
+        {secondary && (
+          <button className="chip" style={{cursor: "pointer"}} onClick={() => setSecondary(null)}>Clear</button>
+        )}
+      </div>
+      {s && (
+        <div style={{display: "flex", borderTop: "1px solid var(--border)", marginTop: 4}}>
+          <Metric label="Total companies" vP={p.total} vS={s.total} />
+          <Metric label="Active rate"      vP={p.active_pct} vS={s.active_pct} fmt={x => x + "%"} />
+          <Metric label="Funded rate"      vP={p.funded_pct} vS={s.funded_pct} fmt={x => x + "%"} />
+          <div style={{flex: 1, padding: "14px 16px"}}>
+            <div className="mono" style={{fontSize: 10, letterSpacing: "0.14em", color: "var(--fg-muted)", textTransform: "uppercase", marginBottom: 8}}>Funded count</div>
+            <div style={{display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12}}>
+              <span className="serif tabular" style={{fontSize: 22, color: colors[primary]}}>{p.funded.toLocaleString()}</span>
+              <span className="serif tabular" style={{fontSize: 22, color: colors[secondary]}}>{s.funded.toLocaleString()}</span>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

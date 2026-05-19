@@ -25,11 +25,13 @@ function useCountUp(target, duration = 1400, deps = []) {
   useEffect(() => {
     let start;
     let raf;
+    // cubic-bezier(0.16, 1, 0.3, 1) approximation via parametric easeOutExpo blend
+    // (Bezier curve in JS is heavy; this curve is visually indistinguishable.)
+    const ease = (t) => 1 - Math.pow(1 - t, 4.2);
     const step = (now) => {
       if (!start) start = now;
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(target * eased);
+      setValue(target * ease(progress));
       if (progress < 1) raf = requestAnimationFrame(step);
     };
     raf = requestAnimationFrame(step);
@@ -202,3 +204,45 @@ Object.assign(window, {
   fmtUSD, fmtNum, fmtPct, useCountUp, useThemeMode, applyAccent, HeroCanvas, Sparkline,
   useState, useEffect, useRef, useMemo, useCallback,
 });
+
+// --- URL state sync (shareable views) ---
+function useUrlState(initial) {
+  const [state, setState] = useState(() => {
+    if (typeof window === "undefined") return initial;
+    const p = new URLSearchParams(window.location.search);
+    const merged = { ...initial };
+    for (const k of Object.keys(initial)) {
+      if (p.has(k)) {
+        const v = p.get(k);
+        merged[k] = v === "" ? null : v;
+      }
+    }
+    return merged;
+  });
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(state)) {
+      if (v != null && v !== "" && v !== false) p.set(k, String(v));
+    }
+    const qs = p.toString();
+    const url = window.location.pathname + (qs ? "?" + qs : "") + window.location.hash;
+    window.history.replaceState(null, "", url);
+  }, [state]);
+  return [state, setState];
+}
+
+// --- Year-range filtering helpers ---
+// Given a by_year object and {start, end} (inclusive), return summed totals.
+function sumYearRange(byYear, range) {
+  if (!range) return null;
+  let total = 0, funded = 0, active = 0;
+  for (let y = range.start; y <= range.end; y++) {
+    const v = byYear[String(y)];
+    if (!v) continue;
+    total += v.total; funded += v.funded; active += v.active;
+  }
+  return { total, funded, active };
+}
+
+Object.assign(window, { useUrlState, sumYearRange });
