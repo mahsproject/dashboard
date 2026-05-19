@@ -18,7 +18,7 @@ function IndustrySection({ data, filters, setFilters, chartStyle = "donut" }) {
 
   const subSectors = selected
     ? Object.entries(data.by_industry_subsectors[selected] || {})
-        .sort((a, b) => b[1] - a[1]).slice(0, 10)
+        .sort((a, b) => b[1] - a[1]).slice(0, 12)
         .map(([name, count]) => ({ name, count }))
     : [];
 

@@ -428,16 +428,6 @@ a { color: inherit; text-decoration: none; }
 .kpi-foot .down { color: #f87171; }
 
 /* ---------- LAYOUT MAIN ---------- */
-.main-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 48px;
-  padding-top: 32px;
-}
-@media (max-width: 1080px) {
-  .main-layout { grid-template-columns: 1fr; }
-  .sidebar { display: none; }
-}
 
 /* ---------- SIDEBAR ---------- */
 .sidebar {

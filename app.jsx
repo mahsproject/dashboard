@@ -57,16 +57,11 @@ function App() {
         totalFiltered={totalFiltered}
       />
 
-      <div className="shell">
-        <div className="main-layout">
-          <Sidebar data={data} filters={filters} setFilters={setFilters} totalFiltered={totalFiltered} />
-          <main style={{minWidth: 0}}>
-            <IndustrySection data={data} filters={filters} setFilters={setFilters} chartStyle={tweaks.industryChartStyle} />
-            <SizeRevenueSection data={data} />
-            <ThemeSection data={data} filters={filters} setFilters={setFilters} />
-          </main>
-        </div>
-      </div>
+      <main>
+        <IndustrySection data={data} filters={filters} setFilters={setFilters} chartStyle={tweaks.industryChartStyle} />
+        <SizeRevenueSection data={data} />
+        <ThemeSection data={data} filters={filters} setFilters={setFilters} />
+      </main>
 
       <Footer />
     </>

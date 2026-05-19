@@ -5,7 +5,6 @@ function Sidebar({ data, filters, setFilters, totalFiltered }) {
     .filter(([, v]) => v.total > 0)
     .sort((a, b) => b[1].total - a[1].total);
   const sizes = [
-    ["micro", "Micro · 1–10"],
     ["small", "Small · 11–50"],
     ["medium", "Medium · 51–500"],
     ["large", "Large · 500+"],

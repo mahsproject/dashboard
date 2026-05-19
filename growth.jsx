@@ -93,8 +93,7 @@ function YearTip({ active, payload, label }) {
 
 function SizeRevenueSection({ data }) {
   const sizes = [
-    { key: "micro",  label: "Micro",  range: "1–10 employees" },
-    { key: "small",  label: "Small",  range: "11–50" },
+    { key: "small",  label: "Small",  range: "11–50 employees" },
     { key: "medium", label: "Medium", range: "51–500" },
     { key: "large",  label: "Large",  range: "500+" },
   ];
@@ -107,11 +106,11 @@ function SizeRevenueSection({ data }) {
         <div className="section-head">
           <div>
             <span className="eyebrow">03 — Company scale</span>
-            <h2 style={{marginTop: 14}}>Mostly micro, increasingly mighty.</h2>
+            <h2 style={{marginTop: 14}}>Small but growing — scale drives funding.</h2>
           </div>
           <p className="lede">
-            Among companies with reported headcount (5,661 of 12,192), three in five are micro-sized.
-            Medium and large tiers fund at 2–3× the rate of micro companies.
+            Among companies with reported headcount (2,341 of 12,210), medium and large companies
+            fund at significantly higher rates than small ones.
           </p>
         </div>
 
