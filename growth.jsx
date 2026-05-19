@@ -109,7 +109,7 @@ function SizeRevenueSection({ data }) {
             <h2 style={{marginTop: 14}}>Small but growing — scale drives funding.</h2>
           </div>
           <p className="lede">
-            Among companies with reported headcount (2,341 of 12,210), medium and large companies
+            Among companies with reported headcount (2,312 of 12,275), medium and large companies
             fund at significantly higher rates than small ones.
           </p>
         </div>

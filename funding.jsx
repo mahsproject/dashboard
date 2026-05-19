@@ -22,7 +22,7 @@ function FundingSection({ data, funnelStyle = "stepped" }) {
             <h2 style={{marginTop: 14}}>Where capital actually lands.</h2>
           </div>
           <p className="lede">
-            Of 12,210 companies, 398 reached seed and 78 progressed beyond. The Seed → Series A
+            Of 12,275 companies, 398 reached seed and 78 progressed beyond. The Seed → Series A
             conversion at 14.8% is Hyderabad's tightest squeeze.
           </p>
         </div>
