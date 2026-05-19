@@ -152,7 +152,6 @@ function App() {
         <SectorStageHeatmap data={data} filters={filters} setFilters={setFilters} />
         <DefenceSection data={data} />
         <ThemeSection data={data} filters={filters} setFilters={setFilters} />
-        <RequestSection filters={filters} setFilters={setFilters} />
       </main>
 
       <Footer />
