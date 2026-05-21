@@ -11,9 +11,8 @@ function Topbar({ themeMode, setThemeMode, search, setSearch, data, applyFilter 
       <nav className="topnav">
         <a href="#overview" className="active">Overview</a>
         <a href="#industries">Industries</a>
-        <a href="#capital">Capital</a>
+        <a href="#investors">Investors</a>
         <a href="#themes">Themes</a>
-        <a href="#defence">Defence</a>
       </nav>
       <div className="top-actions">
         <SearchBox search={search} setSearch={setSearch} data={data} applyFilter={applyFilter} />
