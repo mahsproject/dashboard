@@ -146,11 +146,7 @@ function App() {
         />
         <GrowthSection data={data} yearRange={yearRange} fullYearRange={FULL_YEAR_RANGE} />
         <SizeRevenueSection data={data} />
-        <FundingSection data={data} />
-        <CapitalFlowSection data={data} />
         <InvestorsSection data={data} />
-        <SectorStageHeatmap data={data} filters={filters} setFilters={setFilters} />
-        <DefenceSection data={data} />
         <ThemeSection data={data} filters={filters} setFilters={setFilters} />
       </main>
 

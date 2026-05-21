@@ -1,4 +1,4 @@
-// Section 07 — The Investor Network
+// Section 05 — The Investor Network
 // Top 15 institutional investors by deal count, color-coded by type.
 
 function InvestorsSection({ data }) {
@@ -22,11 +22,11 @@ function InvestorsSection({ data }) {
 
   return (
     <section className="section" id="investors">
-      <span className="section-num">07 / Investors</span>
+      <span className="section-num">05 / Investors</span>
       <div className="shell">
         <div className="section-head">
           <div>
-            <span className="eyebrow">07 — Capital deployers</span>
+            <span className="eyebrow">05 — Capital deployers</span>
             <h2 style={{marginTop: 14}}>Who actually writes the cheques.</h2>
           </div>
           <p className="lede">
