@@ -8,7 +8,6 @@ function FundingSection({ data, funnelStyle = "stepped" }) {
         <div className="section-head">
           <div>
             <span className="eyebrow">05 — Capital concentration</span>
-            <h2 style={{marginTop: 14}}>Where capital actually lands.</h2>
           </div>
           <p className="lede">
             Of {data.kpis.total_companies.toLocaleString()} companies, {data.kpis.funded_companies.toLocaleString()} raised — but only {data.kpis.disclosed_funded.toLocaleString()} disclosed amounts.

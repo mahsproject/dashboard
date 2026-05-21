@@ -20,7 +20,6 @@ function CapitalFlowSection({ data }) {
         <div className="section-head">
           <div>
             <span className="eyebrow">06 — Capital flow</span>
-            <h2 style={{marginTop: 14}}>Rounds, not totals.</h2>
           </div>
           <p className="lede">
             Funding-round volume peaked in {peak.year} at {peak.rounds} rounds and held above {lastFull?.rounds || 79} into {lastFull?.year || 2024}.

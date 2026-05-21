@@ -41,7 +41,6 @@ function SectorStageHeatmap({ data, filters, setFilters }) {
         <div className="section-head">
           <div>
             <span className="eyebrow">08 — Where industries cluster</span>
-            <h2 style={{marginTop: 14}}>Sector × stage, at a glance.</h2>
           </div>
           <p className="lede">
             Each industry's distribution across the funding stack. Cell shade is row-relative —

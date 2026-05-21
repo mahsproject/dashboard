@@ -20,7 +20,6 @@ function DefenceSection({ data }) {
         <div className="section-head">
           <div>
             <span className="eyebrow">10 — Spotlight</span>
-            <h2 style={{marginTop: 14}}>Hyderabad's other story is defence.</h2>
           </div>
           <p className="lede">
             Better known for software, Hyderabad quietly hosts one of India's densest
