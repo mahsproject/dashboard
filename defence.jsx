@@ -1,4 +1,4 @@
-// Section 10 — Spotlight: Defence & Deeptech
+// Section 09 — Spotlight: Defence & Deeptech
 // Hyderabad's understated story — frame as a facet, not a separate industry.
 
 function DefenceSection({ data }) {
@@ -15,11 +15,11 @@ function DefenceSection({ data }) {
 
   return (
     <section className="section" id="defence">
-      <span className="section-num">10 / Defence</span>
+      <span className="section-num">09 / Defence</span>
       <div className="shell">
         <div className="section-head">
           <div>
-            <span className="eyebrow">10 — Spotlight</span>
+            <span className="eyebrow">09 — Spotlight</span>
           </div>
           <p className="lede">
             Better known for software, Hyderabad quietly hosts one of India's densest

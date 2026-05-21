@@ -74,11 +74,11 @@ function ThemeSection({ data, filters, setFilters }) {
 
   return (
     <section className="section" id="themes">
-      <span className="section-num">11 / Themes</span>
+      <span className="section-num">10 / Themes</span>
       <div className="shell">
         <div className="section-head">
           <div>
-            <span className="eyebrow">11 — Trending themes</span>
+            <span className="eyebrow">10 — Trending themes</span>
             <h2 style={{marginTop: 14}}>What founders are actually building.</h2>
           </div>
           <p className="lede">
